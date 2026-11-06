@@ -1,17 +1,17 @@
+
+/* Variáveis globais para facilitar controle da paleta de cores. */
 :root {
-    --bg: #F7F5FA;
-    --topbar: #24152F;
-    --sidebar: #EEEAF2;
-    --primary: #7C3AED;
-    --primary-hover: #6D28D9;
-    --primary-soft: #DDD6FE;
-    --text: #29212F;
-    --text-muted: #6B6470;
-    --card: #FFFFFF;
-    --border: #DDD7E2;
-    --star: #8B5CF6;
-    --white: #FFFFFF;
-    --shadow-soft: rgba(36, 21, 47, 0.06);
+    --bg: #F7F5FA; /* Fundo da página */
+    --topbar: #24152F; /* Cabeçalho */
+    --primary: #7C3AED; /* Cor principal */
+    --primary-hover: #6D28D9; /* Cor para interações com mouse */
+    --primary-soft: #DDD6FE; /* Versão clara da cor principal */
+    --text: #29212F; /* Textos principais */
+    --text-muted: #6B6470; /* Textos secundários */
+    --card: #FFFFFF; /* Fundo dos cards */
+    --border: #DDD7E2; /* Bordas */
+    --white: #FFFFFF; /* Branco */
+    --shadow-soft: rgba(36, 21, 47, 0.06); /* Sombra */
 }
 
 * {
@@ -25,11 +25,7 @@ body {
     font-family: "Trebuchet MS", Arial, sans-serif;
 }
 
-.container {
-    min-height: 100vh;
-}
-
-.topbar {
+.cabecalho {
     height: 64px;
     padding: 0 30px;
     display: flex;
@@ -39,7 +35,7 @@ body {
     color: var(--white);
 }
 
-.brand {
+.marca {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -50,132 +46,19 @@ body {
     font-weight: bold;
 }
 
-.brand-icon {
-    font-size: 2.6rem;
-    line-height: 0;
-    transform: rotate(-20deg);
-    color: var(--primary-soft);
-}
-
-.search-box {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.cabecalho input[type="search"] {
     width: min(485px, 48vw);
     padding: 8px 12px;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.08);
-    color: var(--text-muted);
+    color: var(--white);
     border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.search-box span {
-    font-size: 1.55rem;
-    line-height: 1;
-}
-
-.search-box input {
-    width: 100%;
-    border: 0;
     outline: 0;
-    background: transparent;
     font: inherit;
-    color: var(--white);
 }
 
-.search-box input::placeholder {
+.cabecalho input[type="search"]::placeholder {
     color: rgba(255, 255, 255, 0.72);
-}
-
-.top-actions {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    margin-left: auto;
-}
-
-.top-actions button {
-    border: 0;
-    background: transparent;
-    color: var(--white);
-    font-size: 1.6rem;
-    cursor: pointer;
-    transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.top-actions button:hover {
-    color: var(--primary-soft);
-    transform: translateY(-1px);
-}
-
-.top-actions .avatar {
-    width: 38px;
-    height: 38px;
-    border: 2px solid var(--white);
-    border-radius: 50%;
-    font-size: 1.65rem;
-    background: var(--primary-soft);
-    color: var(--topbar);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.corpo {
-    display: flex;
-    min-height: calc(100vh - 64px);
-}
-
-.sidebar {
-    width: 210px;
-    flex: 0 0 210px;
-    padding: 20px 12px;
-    border-right: 1px solid var(--border);
-    background: var(--sidebar);
-    display: flex;
-    flex-direction: column;
-}
-
-.sidebar nav {
-    display: grid;
-    gap: 5px;
-}
-
-.sidebar a {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 11px 13px;
-    border-radius: 7px;
-    color: var(--text);
-    text-decoration: none;
-    font-size: .92rem;
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.sidebar a span {
-    width: 20px;
-    text-align: center;
-    font-size: 1.5rem;
-}
-
-.sidebar a:hover {
-    background: var(--primary-hover);
-    color: var(--white);
-    transform: translateX(2px);
-}
-
-.sidebar a.active {
-    background: var(--primary);
-    color: var(--white);
-    font-weight: bold;
-}
-
-.sidebar .settings {
-    margin-top: auto;
-    border-top: 1px solid var(--border);
-    border-radius: 0;
-    padding-top: 20px;
 }
 
 main {
@@ -185,7 +68,7 @@ main {
     margin: 0 auto;
 }
 
-.featured {
+.destaques {
     min-height: 162px;
     padding: 24px 10%;
     border-radius: 7px;
@@ -196,90 +79,24 @@ main {
     box-shadow: 0 8px 24px var(--shadow-soft);
 }
 
-.featured-art {
-    color: var(--primary);
-    font-size: 5.4rem;
-    line-height: .5;
-    transform: rotate(-10deg);
-    opacity: .9;
-}
-
-.featured h2 {
+.destaques h2 {
     margin: 0 0 4px;
     font-size: 1.35rem;
     color: var(--text);
 }
 
-.featured p {
+.destaques p {
     margin: 0;
     color: var(--text-muted);
 }
 
-.carousel-dots {
-    display: flex;
-    gap: 14px;
-    margin-top: 29px;
-}
-
-.carousel-dots span {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--border);
-}
-
-.carousel-dots .selected {
-    background: var(--primary);
-}
-
-.section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px 0 14px;
-}
-
-.section-heading h2 {
-    margin: 0;
-    font-size: 1.4rem;
-    color: var(--text);
-}
-
-.view-toggle {
-    display: flex;
-    border: 1px solid var(--border);
-    border-radius: 7px;
-    overflow: hidden;
-}
-
-.view-toggle button {
-    width: 42px;
-    height: 31px;
-    border: 0;
-    border-left: 1px solid var(--border);
-    background: var(--bg);
-    color: var(--text-muted);
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.view-toggle button:first-child {
-    border-left: 0;
-}
-
-.view-toggle .selected {
-    background: var(--primary-soft);
-    color: var(--text);
-}
-
-.cards {
+.lista-jogos {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 10px 11px;
 }
 
-.card {
+.jogo {
     padding: 10px 10px 12px;
     border: 1px solid var(--border);
     border-radius: 7px;
@@ -287,7 +104,7 @@ main {
     box-shadow: 0 4px 12px rgba(36, 21, 47, 0.03);
 }
 
-.card img {
+.jogo img {
     display: block;
     width: 100%;
     height: 126px;
@@ -296,7 +113,7 @@ main {
     background: var(--primary-soft);
 }
 
-.card h3 {
+.jogo h3 {
     margin: 11px 3px 5px;
     font-size: .82rem;
     white-space: nowrap;
@@ -305,59 +122,29 @@ main {
     color: var(--text);
 }
 
-.rating {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    padding: 0 3px;
-    color: var(--text-muted);
-    font-size: .92rem;
-}
-
-.rating span:first-child {
-    letter-spacing: 0;
-    color: var(--star);
-}
-
-.rating .empty {
-    color: var(--border);
-    margin-left: -4px;
-}
-
-.rating b {
-    margin-left: 6px;
-    font-size: .75rem;
-    font-weight: normal;
-    color: var(--text-muted);
-}
-
 @media (max-width: 1024px) {
-    .cards {
+    .lista-jogos {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .featured {
+    .destaques {
         gap: 32px;
         padding-inline: 6%;
     }
 }
 
 @media (max-width: 850px) {
-    .brand {
+    .marca {
         min-width: auto;
     }
 
-    .brand > span:last-child {
-        display: none;
-    }
-
-    .cards {
+    .lista-jogos {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 600px) {
-    .topbar {
+    .cabecalho {
         height: auto;
         min-height: 64px;
         padding: 12px 16px;
@@ -365,113 +152,58 @@ main {
         gap: 12px;
     }
 
-    .brand {
+    .marca {
         flex: 1;
     }
 
-    .search-box {
+    .cabecalho input[type="search"] {
         order: 3;
         width: 100%;
         background: rgba(255, 255, 255, 0.1);
-    }
-
-    .top-actions {
-        gap: 8px;
-    }
-
-    .sidebar {
-        width: 100%;
-        flex: none;
-        min-height: auto;
-        padding: 8px;
-        border-right: 0;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .sidebar nav {
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    .sidebar a {
-        justify-content: center;
-        padding: 7px 2px;
-        flex-direction: column;
-        gap: 2px;
-        font-size: .68rem;
-    }
-
-    .sidebar a span {
-        font-size: 1.2rem;
-    }
-
-    .sidebar .settings {
-        display: none;
-    }
-
-    .corpo {
-        flex-direction: column;
     }
 
     main {
         padding: 16px 12px 28px;
     }
 
-    .featured {
+    .destaques {
         min-height: 140px;
         padding: 20px;
         gap: 18px;
     }
 
-    .featured-art {
-        font-size: 3.8rem;
-    }
-
-    .featured h2 {
+    .destaques h2 {
         font-size: 1.05rem;
     }
 
-    .featured p {
+    .destaques p {
         font-size: .78rem;
     }
 
-    .cards {
+    .lista-jogos {
         gap: 8px;
     }
 
-    .card {
+    .jogo {
         padding: 7px 7px 10px;
     }
 
-    .card img {
+    .jogo img {
         height: 105px;
     }
 
-    .card h3 {
+    .jogo h3 {
         font-size: .72rem;
         margin-top: 8px;
-    }
-
-    .rating {
-        font-size: .78rem;
     }
 }
 
 @media (max-width: 420px) {
-    .topbar {
+    .cabecalho {
         justify-content: space-between;
     }
 
-    .top-actions {
-        margin-left: 0;
-    }
-
-    .cards {
+    .lista-jogos {
         grid-template-columns: 1fr;
-    }
-
-    .section-heading {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
     }
 }
