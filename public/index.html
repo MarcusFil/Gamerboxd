@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gameboxd</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="topbar">
+            <a class="brand" href="#inicio" aria-label="Gameboxd - início">
+                <span class="brand-icon" aria-hidden="true">⌁</span>
+                <span>Gameboxd</span>
+            </a>
+            <label class="search-box">
+                <span aria-hidden="true">⌕</span>
+                <input type="search" placeholder="Buscar jogos, pessoas, gêneros..." aria-label="Buscar jogos, pessoas ou gêneros">
+            </label>
+            <div class="top-actions" aria-label="Ações da conta">
+                <button type="button" aria-label="Notificações">♧</button>
+                <button class="avatar" type="button" aria-label="Perfil">◯</button>
+                <button type="button" aria-label="Abrir menu da conta">⌄</button>
+            </div>
+        </header>
 
+        <div class="corpo">
+            <aside class="sidebar" aria-label="Navegação principal">
+                <nav>
+                    <a class="active" href="#inicio"><span aria-hidden="true">⌂</span>Início</a>
+                    <a href="#biblioteca"><span aria-hidden="true">▣</span>Biblioteca</a>
+                    <a href="#descobrir"><span aria-hidden="true">◉</span>Descobrir</a>
+                    <a href="#favoritos"><span aria-hidden="true">♡</span>Favoritos</a>
+                    <a href="#amigos"><span aria-hidden="true">♧</span>Amigos</a>
+                </nav>
+                <a class="settings" href="#configuracoes"><span aria-hidden="true">⚙</span>Configurações</a>
+            </aside>
+
+            <main id="inicio">
+                <section class="featured" aria-label="Destaques da semana">
+                    <div class="featured-art" aria-hidden="true">⌁</div>
+                    <div>
+                        <h2>Destaques da semana</h2>
+                        <p>Confira os jogos mais jogados e recomendados.</p>
+                        <div class="carousel-dots" aria-hidden="true"><span class="selected"></span><span></span><span></span><span></span></div>
+                    </div>
+                </section>
+
+                <div class="section-heading">
+                    <h2>Todos os jogos</h2>
+                    <div class="view-toggle" aria-label="Modo de visualização">
+                        <button class="selected" type="button" aria-label="Visualização em grade">▦</button>
+                        <button type="button" aria-label="Visualização em lista">☷</button>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/reddead/500/300" alt="Capa de Red Dead Redemption 2">
+                        <h3>Red Dead Redemption 2</h3><div class="rating"><span>★★★★</span><span class="empty">★</span><b>4.8</b></div>
+                    </article>
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/lastofus/500/300" alt="Capa de The Last of Us Part I">
+                        <h3>The Last of Us Part I</h3><div class="rating"><span>★★★★</span><span class="empty">★</span><b>4.7</b></div>
+                    </article>
+                    <article class="card"><img src="https://picsum.photos/seed/godofwar/500/300" alt="Capa de God of War Ragnarök"><h3>God of War Ragnarök</h3><div class="rating"><span>★★★★</span><span class="empty">★</span><b>4.9</b></div></article>
+                    <article class="card"><img src="https://picsum.photos/seed/horizon/500/300" alt="Capa de Horizon Forbidden West"><h3>Horizon Forbidden West</h3><div class="rating"><span>★★★★</span><span class="empty">★</span><b>4.6</b></div></article>
+                    <article class="card"><img src="https://picsum.photos/seed/eldenring/500/300" alt="Capa de Elden Ring"><h3>Elden Ring</h3><div class="rating"><span>★★★★</span><span class="empty">★</span><b>4.9</b></div></article>
+                    <article class="card"><img src="https://picsum.photos/seed/baldursgate/500/300" alt="Capa de Baldur's Gate 3"><h3>Baldur's Gate 3</h3><div class="rating"><span>★★★★</span><span class="empty">★</span><b>4.8</b></div></article>
+                    <article class="card"><img src="https://picsum.photos/seed/starfield/500/300" alt="Capa de Starfield"><h3>Starfield</h3><div class="rating"><span>★★★★</span><span class="empty">★</span><b>4.2</b></div></article>
+                    <article class="card"><img src="https://picsum.photos/seed/spiderman/500/300" alt="Capa de Spider-Man 2"><h3>Spider-Man 2</h3><div class="rating"><span>★★★★</span><span class="empty">★</span><b>4.5</b></div></article>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
