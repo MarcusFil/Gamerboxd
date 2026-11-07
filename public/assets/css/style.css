@@ -74,8 +74,9 @@ main {
     border-radius: 7px;
     background: linear-gradient(100deg, var(--primary-soft), var(--bg));
     display: flex;
-    align-items: center;
-    gap: 11%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
     box-shadow: 0 8px 24px var(--shadow-soft);
 }
 
@@ -100,7 +101,7 @@ main {
     padding: 10px 10px 12px;
     border: 1px solid var(--border);
     border-radius: 7px;
-    background: var(--card);
+    background: var(--primary-soft);
     box-shadow: 0 4px 12px rgba(36, 21, 47, 0.03);
 }
 
