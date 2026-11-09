@@ -45,7 +45,6 @@ if (jogoSelecionado) {
 
     // Galeria de imagens
     const listaImagens = document.getElementById("lista-imagens");
-
     jogoSelecionado.imagens.forEach(function(item) {
         const imagem = document.createElement("img");
         imagem.src = item;

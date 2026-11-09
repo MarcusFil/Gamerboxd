@@ -71,6 +71,7 @@ body {
 }
 
 /* #endregion */
+
 /* #region main */
 main {
     flex: 1;
@@ -244,7 +245,44 @@ main {
 /* #endregion */
 
 /* #region Rodapé */
+.topo-rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.topo-rodape h2,
+.topo-rodape p {
+    margin: 0;
+}
+
+.rodape {
+    background-color: var(--topbar);
+    color: var(--white);
+    padding: 20px;
+}
+
+.rodape h2 {
+    margin-top: 0;
+    font-size:30px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 9px;
+    margin-bottom: 10px;
+}
+
+.rodape h3 {
+    font-size: 21px;
+    margin-top: 0;
+}
+
+.rodape a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.rodape a:hover {
+    text-decoration: underline;
+}
 /* #endregion */
 
 /* #region Responsividade */
