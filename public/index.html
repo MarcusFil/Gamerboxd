@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamerboxd</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -24,26 +25,27 @@
             <h2>Destaques da semana</h2>
             <p>Confira alguns jogos em destaque.</p>
             
-            <div class="carrossel">
-                <div class="lista-destaques">
+            <div id="carrosselDestaques" class="carousel slide">
+                <div class="carousel-inner">
         
                 </div>
-            </div>
-            <div class="indicadores">
-                <span class="indicador"></span>
-            </div>
-            <div class="botoes-destaque">
-                <button class="anterior">Anterior</button>
-                <button class="proximo">Próximo</button>
-            </div>
-        </section>  
 
-        <section class="catalogo" id="biblioteca">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carrosselDestaques" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#carrosselDestaques" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+
+        <section class="catalogo" id="catalogo">
 
             <h2>Todos os jogos</h2>
 
-            <div class="lista-jogos">
-
+            <div class="lista-jogos row g-3">
+                <!-- Os cards dos jogos serão inseridos aqui dinamicamente via JavaScript -->
             </div>
 
         </section>
@@ -60,15 +62,15 @@
         <p>Curso: Análise e Desenvolvimento de Sistemas</p>
         <p>Instituição: Puc Minas - Campus Betim</p>
         <p>Matrícula: 927269</p>
-        <p>Contatos:
+        <p>Contatos:</p>
             <ul>
                 <li>E-mail: marxusfilipe@gmail.com</li>
                 <li>GitHub: <a href="https://github.com/MarcusFil" target="_blank">Marcus Filipe</a></li>
             </ul>
-        </p>
         <p>Link do projeto: <a href="https://github.com/MarcusFil/gamerboxd" target="_blank">Gamerboxd</a></p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
 </html>

@@ -114,11 +114,7 @@ const data = {
 //#region Área de Destaques
 
 // selecionar os elementos html necessários
-const listaDtq = document.querySelector(".lista-destaques"); 
-const carrossel = document.querySelector(".carrossel");
-const btnAnt = document.querySelector(".anterior");
-const btnProx = document.querySelector(".proximo");
-const divIndicadores = document.querySelector(".indicadores");
+const listaDtq = document.querySelector(".carousel-inner"); 
 
 
 //array apenas com os jogos em destaque
@@ -127,11 +123,15 @@ const listaDestaques = data.jogos.filter(function(item){
 });
 
 // função para criar os cards de destaque
-function createCardDestaque(jogo) {
+function createCardDestaque(jogo, indice) {
     // variável referente ao card de destaque
-    const cardDtq = document.createElement("article");
+    const cardDtq = document.createElement("div");
     cardDtq.setAttribute("data-id", jogo.id);
     cardDtq.classList.add("card-destaque");
+    cardDtq.classList.add("carousel-item");
+    if (indice === 0) {
+        cardDtq.classList.add("active");
+    }
     cardDtq.style.backgroundImage = `url("${jogo.capa}")`;
     listaDtq.appendChild(cardDtq);
     //título
@@ -150,44 +150,9 @@ function createCardDestaque(jogo) {
     });
 }
 
-// função para criar os indicadores de acordo com a quantidade de jogos em destaque
-listaDestaques.forEach(function(item) {
-    const indicador = document.createElement("span");
-    indicador.classList.add("indicador");
-    divIndicadores.appendChild(indicador);
-});
-
-// selecionar os indicadores
-const listaIndicadores = document.querySelectorAll(".indicador");
-
 // forEach para percorrer a lista de destaques e criar os cards
-listaDestaques.forEach(function(item){
-    createCardDestaque(item);
-});
-
-// varíavel pra ser usada como índice dos cards em destaque
-let indiceDtq = 0;
-// função para criar o movimento do carrossel, sendo usada nos botões "anterior" e "próximo"
-function moverCarrossel(dir) {
-    indiceDtq += dir;
-    if(indiceDtq >= listaDestaques.length) {
-        indiceDtq = 0;
-    }
-    else if(indiceDtq < 0) {
-        indiceDtq = (listaDestaques.length - 1);
-    }
-    listaDtq.style.transform = `translateX(${document.querySelector(".card-destaque").getBoundingClientRect().width * -indiceDtq}px)`;
-    listaIndicadores.forEach(function(item, indice) {
-        // numa próxima versão, terá indicadores de página para a seção de destaques
-    })
-}
-
-// eventos de click para o funcionamento dos botões "anterior" e "próximo"
-btnAnt.addEventListener("click", function() {
-    moverCarrossel(-1);
-});
-btnProx.addEventListener("click", function() {
-    moverCarrossel(1);
+listaDestaques.forEach(function(item, indice) {
+    createCardDestaque(item, indice);
 });
 
 //#endregion
@@ -198,19 +163,26 @@ btnProx.addEventListener("click", function() {
 const listaJogos = document.querySelector(".lista-jogos");
 
 // função para criar os cards
-function criarCard(jogo) {
+function criarCard(jogo, coluna) {
     const card = document.createElement("article");
     card.setAttribute("data-id", jogo.id);
+    card.classList.add("card");
     card.classList.add("jogo");
-    listaJogos.appendChild(card);
+    coluna.appendChild(card);
     // capa
     const imagem = document.createElement("img");
     imagem.src = jogo.capa;
+    imagem.classList.add("card-img-top");
     card.appendChild(imagem);
+    // corpo do card
+    const corpoCard = document.createElement("div");
+    corpoCard.classList.add("card-body");
+    card.appendChild(corpoCard);
     // título
     const titulo = document.createElement("h3");
     titulo.textContent = jogo.nome;
-    card.appendChild(titulo);
+    titulo.classList.add("card-title");
+    corpoCard.appendChild(titulo);
     // generos
     const divGeneros = document.createElement("div");
     divGeneros.classList.add("generos-card");
@@ -218,22 +190,26 @@ function criarCard(jogo) {
         const genero = document.createElement("span");
         genero.textContent = item;
         genero.classList.add("genero-destaque");
+        genero.classList.add("badge", "rounded-pill");
         divGeneros.appendChild(genero);
     })
-    card.appendChild(divGeneros);
+    corpoCard.appendChild(divGeneros);
     // botão para a página de detalhes
     const btnDtls = document.createElement("button");
     btnDtls.textContent = "Ver Detalhes";
-    btnDtls.classList.add("botao-detalhes");
-    card.appendChild(btnDtls);
+    btnDtls.classList.add("btn", "botao-detalhes");
+    corpoCard.appendChild(btnDtls);
 
     // evento para funcionamento do botão
-    btnDtls.addEventListener("click", function(item) {
+    btnDtls.addEventListener("click", function() {
         window.location.href = `detalhes.html?id=${jogo.id}`;
     })
 }
 
 data.jogos.forEach(function(item) {
-    criarCard(item);
+    const coluna = document.createElement("div");
+    coluna.classList.add("col-12", "col-md-6", "col-lg-4");
+    listaJogos.appendChild(coluna);
+    criarCard(item, coluna);
 })
 //#endregion
