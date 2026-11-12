@@ -1,3 +1,4 @@
+// Constante que armazena os jogos cadastrados
 const data = {
     "jogos":  [
         {
@@ -117,7 +118,7 @@ const data = {
 const listaDtq = document.querySelector(".carousel-inner"); 
 
 
-//array apenas com os jogos em destaque
+//array filtrando apenas os jogos em destaque
 const listaDestaques = data.jogos.filter(function(item){
     return item.destaque === true;
 });
@@ -164,6 +165,7 @@ const listaJogos = document.querySelector(".lista-jogos");
 
 // função para criar os cards
 function criarCard(jogo, coluna) {
+    // variável referente aos cards de cada jogo
     const card = document.createElement("article");
     card.setAttribute("data-id", jogo.id);
     card.classList.add("card");
@@ -186,6 +188,7 @@ function criarCard(jogo, coluna) {
     // generos
     const divGeneros = document.createElement("div");
     divGeneros.classList.add("generos-card");
+    // forEach para percorrer os gêneros do jogo, criando um elemento HTML pra cada
     jogo.generos.forEach(function(item) {
         const genero = document.createElement("span");
         genero.textContent = item;
@@ -206,6 +209,7 @@ function criarCard(jogo, coluna) {
     })
 }
 
+// forEach que percorre toda a lista de jogos, criando todos os cards e adicionando a div 'coluna'
 data.jogos.forEach(function(item) {
     const coluna = document.createElement("div");
     coluna.classList.add("col-12", "col-md-6", "col-lg-4");

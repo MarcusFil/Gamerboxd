@@ -1,3 +1,5 @@
+/* #region Cabeçalho */
+
 .cabecalho nav {
     margin-left: auto;
 }
@@ -11,6 +13,9 @@
     border-radius: 7px;
 }
 
+/* #endregion */
+
+/* #region Corpo */
 .capa-jogo {
     width: 280px;
 }
@@ -33,3 +38,5 @@
     object-fit: cover;
     border-radius: 8px;
 }
+
+/* #endregion */
